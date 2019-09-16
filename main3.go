@@ -226,11 +226,11 @@ func main() {
 	fmt.Println("create table success")
 
 	r := gin.Default()
-	r.Use(authMiddelware)
 	r.POST("/customers", createCustomer)
 	r.GET("/customers/:id", getOneCustomer)
 	r.GET("/customers", getAllCustomer)
 	r.PUT("/customers/:id", updateCustomer)
 	r.DELETE("/customers/:id", deleteCustomer)
+	// r.GET("/customers", authMiddelware)
 	r.Run(":2019")
 }
